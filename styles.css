@@ -556,3 +556,20 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   background-repeat:no-repeat!important;
   background-size:1500% 1400%!important;
 }
+
+/* Mobile fallback colour gallery: visible even if the main JavaScript fails */
+.fallback-colour-gallery{margin:10px 0 12px;padding-top:9px;border-top:1px solid #e3e7df}
+.fallback-photo-swatches{display:grid;grid-auto-flow:column;grid-auto-columns:58px;gap:6px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.fallback-photo-swatches::-webkit-scrollbar{display:none}
+.fallback-photo-thumb{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px;border:1px solid #d8ded4;border-radius:10px;background:#fff;color:var(--char);cursor:pointer}
+.fallback-photo-thumb[aria-pressed="true"]{border-color:var(--forest);box-shadow:0 0 0 2px rgba(32,56,41,.10)}
+.fallback-colour-photo{display:block;width:48px;height:48px;border-radius:7px;background-image:url("assets/catalog.webp?v=phone-image-fix")!important;background-repeat:no-repeat!important;background-size:800% 900%!important;background-color:#f7f7f3}
+.fallback-photo-thumb small{font-size:7px;font-weight:850;line-height:1.05;text-align:center}
+@media(max-width:700px){
+  body[data-device="mobile"] .fallback-colour-gallery{display:block!important;margin:8px 0 10px}
+  body[data-device="mobile"] .fallback-photo-swatches{grid-auto-columns:45px;gap:4px}
+  body[data-device="mobile"] .fallback-photo-thumb{padding:3px;border-radius:8px}
+  body[data-device="mobile"] .fallback-colour-photo{width:37px;height:37px;border-radius:6px}
+  body[data-device="mobile"] .fallback-photo-thumb small{font-size:6px}
+  body[data-device="mobile"] .fallback-colour-gallery .colour-head{display:flex!important}
+}
