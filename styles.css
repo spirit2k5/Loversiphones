@@ -437,3 +437,58 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
  body[data-device="mobile"] .modal-angle-thumb img{width:47px;height:47px;border-radius:6px}
  body[data-device="mobile"] .modal-angle-thumb small{font-size:6px}
 }
+
+
+/* ===== Exact uploaded LoversiPhones angle sprite ===== */
+.angle-sprite{
+  display:block;
+  background-image:url("assets/lovers-angles.webp");
+  background-repeat:no-repeat;
+  background-size:1500% 1400%;
+  background-color:#f7f7f3;
+  background-origin:border-box;
+  background-clip:border-box;
+}
+.product-pic.angle-sprite{
+  object-fit:initial;
+  background-color:#f7f7f3;
+}
+.colour-photo.angle-sprite{
+  object-fit:initial!important;
+}
+.angle-thumb-photo{
+  width:48px;
+  height:48px;
+  border-radius:7px;
+  background-color:#f7f7f3;
+}
+.modal-main-photo.angle-sprite{
+  background-color:#f2f4ef;
+}
+.modal-colour-photo.angle-sprite{
+  width:100%;
+  max-width:98px;
+  aspect-ratio:1/1;
+  border-radius:11px;
+}
+.modal-angle-thumb-photo{
+  width:70px;
+  height:70px;
+  border-radius:8px;
+  background-color:#f5f6f2;
+}
+@media(max-width:700px){
+  body[data-device="mobile"] .angle-thumb-photo{
+    width:32px;
+    height:32px;
+    border-radius:5px;
+  }
+  body[data-device="mobile"] .modal-angle-thumb-photo{
+    width:47px;
+    height:47px;
+    border-radius:6px;
+  }
+  body[data-device="mobile"] .modal-colour-photo.angle-sprite{
+    max-width:100%;
+  }
+}
