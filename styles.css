@@ -442,7 +442,7 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
 /* ===== Exact uploaded LoversiPhones angle sprite ===== */
 .angle-sprite{
   display:block;
-  background-image:url("assets/lovers-angles.webp");
+  background-image:url("assets/lovers-angles.webp?v=mobile-fixed-2");
   background-repeat:no-repeat;
   background-size:1500% 1400%;
   background-color:#f7f7f3;
@@ -491,4 +491,56 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   body[data-device="mobile"] .modal-colour-photo.angle-sprite{
     max-width:100%;
   }
+}
+
+
+/* ===== Mobile horizontal phone carousel ===== */
+@media(max-width:700px){
+  body[data-device="mobile"] .product-grid{
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:10px!important;
+    overflow-x:auto!important;
+    overflow-y:visible!important;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:9px;
+    padding:2px 9px 14px!important;
+    margin-inline:-9px;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none;
+  }
+  body[data-device="mobile"] .product-grid::-webkit-scrollbar{display:none}
+  body[data-device="mobile"] .product-card{
+    flex:0 0 min(78vw,290px)!important;
+    width:min(78vw,290px)!important;
+    max-width:none!important;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  body[data-device="mobile"] .product-media{height:190px!important}
+  body[data-device="mobile"] .product-pic{
+    width:180px!important;
+    height:180px!important;
+    max-width:100%!important;
+  }
+  body[data-device="mobile"] .catalog .section-title::after{
+    content:"Swipe sideways to see more phones →";
+    display:block;
+    width:100%;
+    margin-top:4px;
+    color:var(--olive);
+    font-size:9px;
+    font-weight:950;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+}
+@media(max-width:380px){
+  body[data-device="mobile"] .product-card{
+    flex-basis:82vw!important;
+    width:82vw!important;
+  }
+  body[data-device="mobile"] .product-media{height:174px!important}
+  body[data-device="mobile"] .product-pic{width:164px!important;height:164px!important}
 }
