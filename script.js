@@ -64,7 +64,7 @@ if('IntersectionObserver' in window){
         revealObserver.unobserve(entry.target);
       }
     });
-  },{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+  },{threshold:.01,rootMargin:'0px 0px -2% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 }else{
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('revealed'));
