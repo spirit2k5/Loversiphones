@@ -390,3 +390,50 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   body[data-device="mobile"] .product-media{height:170px!important}
   body[data-device="mobile"] .product-pic{width:160px!important;height:160px!important}
 }
+
+
+/* ===== Exact uploaded angle galleries ===== */
+.product-media{touch-action:pan-y}
+.product-pic{display:block;object-fit:contain;object-position:center;background:#f7f7f2}
+.angle-picker{margin:0 0 14px;padding-top:11px;border-top:1px solid #e3e7df}
+.angle-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:11px;font-weight:850;color:var(--muted)}
+.angle-head b{color:var(--char);font-size:10px}
+.angle-thumbs{display:grid;grid-auto-flow:column;grid-auto-columns:58px;gap:7px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
+.angle-thumbs::-webkit-scrollbar{display:none}
+.angle-thumb{scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px;border:1px solid #d8ded4;border-radius:11px;background:#fff;cursor:pointer;transition:.16s ease;color:var(--char)}
+.angle-thumb:hover{transform:translateY(-2px);border-color:#9dab95}
+.angle-thumb[aria-pressed="true"]{border-color:var(--forest);box-shadow:0 0 0 2px rgba(32,56,41,.11)}
+.angle-thumb img{display:block;width:48px;height:48px;object-fit:contain;background:#f7f7f3;border-radius:7px}
+.angle-thumb small{font-size:8px;font-weight:900;color:#626a61}
+.colour-photo{object-fit:contain!important;background:#f7f7f3!important}
+.modal-angle-stage{position:relative;overflow:hidden}
+.modal-main-photo{display:block;width:min(330px,100%);height:min(330px,42vw);min-height:220px;object-fit:contain;object-position:center;background:#f2f4ef;border-radius:18px}
+.modal-angle-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:42px;height:42px;border:1px solid rgba(32,56,41,.14);border-radius:50%;background:rgba(255,253,248,.93);color:var(--forest);font-size:27px;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px rgba(32,56,41,.14)}
+.modal-angle-prev{left:14px}.modal-angle-next{right:14px}
+.modal-angle-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 9px;font-size:12px;font-weight:850;color:var(--muted)}
+.modal-angle-head b{color:var(--char)}
+.modal-angles{display:grid;grid-auto-flow:column;grid-auto-columns:84px;gap:8px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none;scroll-snap-type:x proximity}
+.modal-angles::-webkit-scrollbar{display:none}
+.modal-angle-thumb{scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:5px;padding:6px;border:1px solid #d8ded4;border-radius:12px;background:#fff;cursor:pointer;color:var(--char)}
+.modal-angle-thumb[aria-pressed="true"]{border-color:var(--forest);box-shadow:0 0 0 2px rgba(32,56,41,.11)}
+.modal-angle-thumb img{width:70px;height:70px;object-fit:contain;background:#f5f6f2;border-radius:8px}
+.modal-angle-thumb small{font-size:8px;font-weight:900}
+.product-card .image-count{min-width:58px;text-align:center}
+
+@media(max-width:700px){
+ body[data-device="mobile"] .angle-picker{margin-bottom:9px;padding-top:7px}
+ body[data-device="mobile"] .angle-head{font-size:7px;margin-bottom:5px}
+ body[data-device="mobile"] .angle-head b{font-size:7px}
+ body[data-device="mobile"] .angle-thumbs{grid-auto-columns:40px;gap:4px;padding-bottom:4px}
+ body[data-device="mobile"] .angle-thumb{padding:3px;border-radius:8px}
+ body[data-device="mobile"] .angle-thumb img{width:32px;height:32px;border-radius:5px}
+ body[data-device="mobile"] .angle-thumb small{font-size:6px}
+ body[data-device="mobile"] .modal-main-photo{width:170px;height:170px;min-height:170px;border-radius:12px}
+ body[data-device="mobile"] .modal-angle-arrow{width:32px;height:32px;font-size:21px}
+ body[data-device="mobile"] .modal-angle-prev{left:8px} body[data-device="mobile"] .modal-angle-next{right:8px}
+ body[data-device="mobile"] .modal-angle-head{font-size:9px;margin:11px 0 6px}
+ body[data-device="mobile"] .modal-angles{grid-auto-columns:57px;gap:5px;padding-bottom:5px}
+ body[data-device="mobile"] .modal-angle-thumb{padding:4px;border-radius:8px}
+ body[data-device="mobile"] .modal-angle-thumb img{width:47px;height:47px;border-radius:6px}
+ body[data-device="mobile"] .modal-angle-thumb small{font-size:6px}
+}
