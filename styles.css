@@ -394,7 +394,7 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
 
 /* ===== Exact uploaded angle galleries ===== */
 .product-media{touch-action:pan-y}
-.product-pic{display:block;object-fit:contain;object-position:center;background:#f7f7f2}
+.product-pic{display:block;object-fit:contain;object-position:center;background-color:#f7f7f2}
 .angle-picker{margin:0 0 14px;padding-top:11px;border-top:1px solid #e3e7df}
 .angle-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:11px;font-weight:850;color:var(--muted)}
 .angle-head b{color:var(--char);font-size:10px}
@@ -405,9 +405,9 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
 .angle-thumb[aria-pressed="true"]{border-color:var(--forest);box-shadow:0 0 0 2px rgba(32,56,41,.11)}
 .angle-thumb img{display:block;width:48px;height:48px;object-fit:contain;background:#f7f7f3;border-radius:7px}
 .angle-thumb small{font-size:8px;font-weight:900;color:#626a61}
-.colour-photo{object-fit:contain!important;background:#f7f7f3!important}
+.colour-photo{object-fit:contain!important;background-color:#f7f7f3!important}
 .modal-angle-stage{position:relative;overflow:hidden}
-.modal-main-photo{display:block;width:min(330px,100%);height:min(330px,42vw);min-height:220px;object-fit:contain;object-position:center;background:#f2f4ef;border-radius:18px}
+.modal-main-photo{display:block;width:min(330px,100%);height:min(330px,42vw);min-height:220px;object-fit:contain;object-position:center;background-color:#f2f4ef;border-radius:18px}
 .modal-angle-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:42px;height:42px;border:1px solid rgba(32,56,41,.14);border-radius:50%;background:rgba(255,253,248,.93);color:var(--forest);font-size:27px;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px rgba(32,56,41,.14)}
 .modal-angle-prev{left:14px}.modal-angle-next{right:14px}
 .modal-angle-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 9px;font-size:12px;font-weight:850;color:var(--muted)}
@@ -543,4 +543,16 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   }
   body[data-device="mobile"] .product-media{height:174px!important}
   body[data-device="mobile"] .product-pic{width:164px!important;height:164px!important}
+}
+
+/* Mobile sprite safety: never let later background shorthands erase phone images */
+.sprite.product-pic,.sprite.colour-photo{
+  background-image:url("assets/catalog.webp?v=phone-image-fix")!important;
+  background-repeat:no-repeat!important;
+  background-size:800% 900%!important;
+}
+.angle-sprite.product-pic,.angle-sprite.colour-photo,.angle-sprite.modal-main-photo,.angle-sprite.angle-thumb-photo,.angle-sprite.modal-angle-thumb-photo,.angle-sprite.modal-colour-photo{
+  background-image:url("assets/lovers-angles.webp?v=phone-image-fix")!important;
+  background-repeat:no-repeat!important;
+  background-size:1500% 1400%!important;
 }
