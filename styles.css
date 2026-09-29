@@ -573,3 +573,22 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   body[data-device="mobile"] .fallback-photo-thumb small{font-size:6px}
   body[data-device="mobile"] .fallback-colour-gallery .colour-head{display:flex!important}
 }
+
+/* Restored previous angle-view experience on mobile fallback cards */
+.fallback-angle-stage{position:relative}
+.fallback-main-angle{background-image:url("assets/lovers-angles.webp?v=angle-return")!important;background-repeat:no-repeat!important;background-size:1500% 1400%!important}
+.fallback-angle-picker{margin:0 0 12px;padding-top:9px;border-top:1px solid #e3e7df}
+.fallback-angle-thumbs{display:grid;grid-auto-flow:column;grid-auto-columns:54px;gap:6px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.fallback-angle-thumbs::-webkit-scrollbar{display:none}
+.fallback-angle-thumb{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px;border:1px solid #d8ded4;border-radius:10px;background:#fff;color:var(--char);cursor:pointer}
+.fallback-angle-thumb[aria-pressed="true"]{border-color:var(--forest);box-shadow:0 0 0 2px rgba(32,56,41,.10)}
+.fallback-angle-photo{display:block;width:44px;height:44px;border-radius:7px;background-image:url("assets/lovers-angles.webp?v=angle-return")!important;background-repeat:no-repeat!important;background-size:1500% 1400%!important;background-color:#f7f7f3}
+@media(max-width:700px){
+  body[data-device="mobile"] .fallback-angle-picker{display:block!important;margin:7px 0 9px;padding-top:7px}
+  body[data-device="mobile"] .fallback-angle-thumbs{grid-auto-columns:43px;gap:4px}
+  body[data-device="mobile"] .fallback-angle-thumb{padding:3px;border-radius:8px}
+  body[data-device="mobile"] .fallback-angle-photo{width:35px;height:35px;border-radius:5px}
+  body[data-device="mobile"] .fallback-angle-thumb small{font-size:6px}
+  body[data-device="mobile"] .fallback-prev,
+  body[data-device="mobile"] .fallback-next{display:grid!important}
+}
