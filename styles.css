@@ -853,10 +853,12 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   background:#fafaf7;
 }
 
-/* iPhone 8 Plus — replaced with the customer's latest uploaded photos */
-.iphone8-new-sprite{
-  background-image:url("assets/iphone8plus-new.webp?v=20260930-1930")!important;
+
+/* iPhone 8 Plus — clean rebuild from the latest uploaded photos only */
+.iphone8plus-clean-sprite{
+  background-image:url("assets/iphone8plus-rebuilt.webp?v=20260930-clean-rebuild")!important;
   background-size:400% 300%!important;
   background-repeat:no-repeat!important;
   background-color:#fafaf7!important;
+  image-rendering:auto!important;
 }
