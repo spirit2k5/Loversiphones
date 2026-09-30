@@ -43,7 +43,7 @@ function detectDeviceMode(){
   body.dataset.input=coarse?'touch':'mouse';
   if(deviceLabel){
     deviceLabel.textContent=mobile?'Mobile experience':'Desktop experience';
-    deviceHint.textContent=mobile?'Swipe phone angles · tap a colour photo':'Hover, pick colours and browse every angle';
+    deviceHint.textContent=mobile?'Full desktop-style view · scaled for your screen':'Hover, pick colours and browse every angle';
   }
   if(deviceIcon) deviceIcon.textContent=mobile?'▯':'▰';
   if(deviceChip) deviceChip.setAttribute('data-mode',mode);

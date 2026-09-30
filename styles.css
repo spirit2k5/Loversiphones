@@ -592,3 +592,250 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   body[data-device="mobile"] .fallback-prev,
   body[data-device="mobile"] .fallback-next{display:grid!important}
 }
+
+
+/* ===== Mobile = desktop experience, scaled down ===== */
+@media(max-width:700px){
+  body[data-device="mobile"]{
+    padding-bottom:0!important;
+  }
+
+  /* Use the same catalogue structure as desktop, only smaller */
+  body[data-device="mobile"] .product-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    overflow:visible!important;
+    padding:0!important;
+    margin:0!important;
+    scroll-snap-type:none!important;
+  }
+  body[data-device="mobile"] .product-grid::-webkit-scrollbar{display:none}
+  body[data-device="mobile"] .product-card{
+    width:auto!important;
+    max-width:none!important;
+    min-width:0!important;
+    flex:none!important;
+    scroll-snap-align:none!important;
+    border-radius:13px!important;
+  }
+
+  /* Keep main phone + arrows visible like desktop */
+  body[data-device="mobile"] .product-media{
+    height:132px!important;
+    padding:4px!important;
+    overflow:hidden!important;
+  }
+  body[data-device="mobile"] .product-pic,
+  body[data-device="mobile"] .fallback-main-angle{
+    width:122px!important;
+    height:122px!important;
+    max-width:100%!important;
+    display:block!important;
+  }
+  body[data-device="mobile"] .card-arrow,
+  body[data-device="mobile"] .fallback-prev,
+  body[data-device="mobile"] .fallback-next{
+    display:grid!important;
+    width:25px!important;
+    height:25px!important;
+    font-size:16px!important;
+  }
+  body[data-device="mobile"] .card-prev,
+  body[data-device="mobile"] .fallback-prev{left:4px!important}
+  body[data-device="mobile"] .card-next,
+  body[data-device="mobile"] .fallback-next{right:4px!important}
+  body[data-device="mobile"] .image-count,
+  body[data-device="mobile"] .fallback-angle-count{
+    right:4px!important;
+    bottom:4px!important;
+    padding:3px 5px!important;
+    font-size:6px!important;
+  }
+  body[data-device="mobile"] .catalog .section-title::after{display:none!important}
+
+  /* Desktop card information, simply scaled */
+  body[data-device="mobile"] .product-info{padding:8px!important}
+  body[data-device="mobile"] .product-top{display:block!important}
+  body[data-device="mobile"] .product-top h3{font-size:12px!important;line-height:1.08!important}
+  body[data-device="mobile"] .product-top p{font-size:8px!important}
+  body[data-device="mobile"] .price{font-size:15px!important;margin-top:5px!important}
+
+  /* NEVER hide colour pictures */
+  body[data-device="mobile"] .colour-picker,
+  body[data-device="mobile"] .fallback-colour-gallery{
+    display:block!important;
+    margin:7px 0 8px!important;
+    padding-top:7px!important;
+  }
+  body[data-device="mobile"] .colour-head{
+    display:flex!important;
+    font-size:7px!important;
+    margin-bottom:5px!important;
+  }
+  body[data-device="mobile"] .colour-head b,
+  body[data-device="mobile"] .fallback-colour-name{font-size:7px!important}
+  body[data-device="mobile"] .photo-swatches,
+  body[data-device="mobile"] .fallback-photo-swatches{
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:40px!important;
+    gap:4px!important;
+    overflow-x:auto!important;
+    padding:2px 1px 4px!important;
+  }
+  body[data-device="mobile"] .photo-thumb,
+  body[data-device="mobile"] .fallback-photo-thumb{
+    display:flex!important;
+    padding:2px!important;
+    border-radius:7px!important;
+  }
+  body[data-device="mobile"] .colour-photo,
+  body[data-device="mobile"] .fallback-colour-photo{
+    display:block!important;
+    width:34px!important;
+    height:34px!important;
+    border-radius:5px!important;
+  }
+  body[data-device="mobile"] .photo-thumb small,
+  body[data-device="mobile"] .fallback-photo-thumb small{
+    display:block!important;
+    font-size:5.5px!important;
+    line-height:1!important;
+  }
+
+  /* NEVER hide the angle viewer */
+  body[data-device="mobile"] .angle-picker,
+  body[data-device="mobile"] .fallback-angle-picker{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    margin:0 0 8px!important;
+    padding-top:6px!important;
+  }
+  body[data-device="mobile"] .angle-head{
+    display:flex!important;
+    font-size:7px!important;
+    margin-bottom:4px!important;
+  }
+  body[data-device="mobile"] .angle-head b{font-size:7px!important}
+  body[data-device="mobile"] .angle-thumbs,
+  body[data-device="mobile"] .fallback-angle-thumbs{
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:38px!important;
+    gap:4px!important;
+    overflow-x:auto!important;
+    padding:2px 1px 4px!important;
+  }
+  body[data-device="mobile"] .angle-thumb,
+  body[data-device="mobile"] .fallback-angle-thumb{
+    display:flex!important;
+    padding:2px!important;
+    border-radius:7px!important;
+  }
+  body[data-device="mobile"] .angle-thumb-photo,
+  body[data-device="mobile"] .fallback-angle-photo{
+    display:block!important;
+    width:32px!important;
+    height:32px!important;
+    border-radius:5px!important;
+  }
+  body[data-device="mobile"] .angle-thumb small,
+  body[data-device="mobile"] .fallback-angle-thumb small{
+    display:block!important;
+    font-size:5.5px!important;
+  }
+
+  /* Same order controls as desktop, scaled down */
+  body[data-device="mobile"] .product-actions{
+    display:grid!important;
+    grid-template-columns:1fr 38px!important;
+    gap:4px!important;
+  }
+  body[data-device="mobile"] .product-actions .btn{
+    min-height:31px!important;
+    padding:6px 5px!important;
+    font-size:8px!important;
+    border-radius:8px!important;
+  }
+
+  /* Keep the desktop floating WhatsApp style rather than mobile-only dock */
+  body[data-device="mobile"] .mobile-dock{display:none!important}
+  body[data-device="mobile"] .floating-wa{
+    display:grid!important;
+    width:46px!important;
+    height:46px!important;
+    right:10px!important;
+    bottom:10px!important;
+    border-radius:14px!important;
+    font-size:13px!important;
+  }
+
+  /* Order popup keeps all desktop features: colours + angles + form */
+  body[data-device="mobile"] .modal-card{
+    width:calc(100% - 14px)!important;
+    max-width:620px!important;
+    border-radius:18px!important;
+  }
+  body[data-device="mobile"] .modal-product{
+    display:grid!important;
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
+  }
+  body[data-device="mobile"] .modal-image{
+    min-height:220px!important;
+    padding:8px!important;
+  }
+  body[data-device="mobile"] .modal-main-photo,
+  body[data-device="mobile"] .modal-image .sprite{
+    width:190px!important;
+    height:190px!important;
+    max-height:190px!important;
+    min-height:190px!important;
+  }
+  body[data-device="mobile"] .modal-info{padding:14px 11px!important}
+  body[data-device="mobile"] .modal-info h2{font-size:22px!important}
+  body[data-device="mobile"] .modal-info>strong{font-size:17px!important;margin:7px 0 10px!important}
+  body[data-device="mobile"] .modal-colours{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:5px!important;
+  }
+  body[data-device="mobile"] .modal-angle-head{display:flex!important}
+  body[data-device="mobile"] .modal-angles{
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:50px!important;
+    gap:4px!important;
+    overflow-x:auto!important;
+  }
+  body[data-device="mobile"] .modal-angle-thumb{display:flex!important;padding:3px!important}
+  body[data-device="mobile"] .modal-angle-thumb-photo{display:block!important;width:42px!important;height:42px!important}
+  body[data-device="mobile"] .modal-form{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+    padding:11px!important;
+  }
+  body[data-device="mobile"] .modal-form .full{grid-column:1/-1!important}
+
+  /* Preserve desktop-style sections and animations, only reduce scale */
+  body[data-device="mobile"] .motion-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body[data-device="mobile"] .mp-three{display:block!important;width:62px!important;height:62px!important}
+}
+
+@media(max-width:360px){
+  body[data-device="mobile"] .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+  body[data-device="mobile"] .product-media{height:116px!important}
+  body[data-device="mobile"] .product-pic,
+  body[data-device="mobile"] .fallback-main-angle{width:106px!important;height:106px!important}
+  body[data-device="mobile"] .photo-swatches,
+  body[data-device="mobile"] .fallback-photo-swatches{grid-auto-columns:36px!important}
+  body[data-device="mobile"] .colour-photo,
+  body[data-device="mobile"] .fallback-colour-photo{width:30px!important;height:30px!important}
+  body[data-device="mobile"] .angle-thumbs,
+  body[data-device="mobile"] .fallback-angle-thumbs{grid-auto-columns:34px!important}
+  body[data-device="mobile"] .angle-thumb-photo,
+  body[data-device="mobile"] .fallback-angle-photo{width:28px!important;height:28px!important}
+  body[data-device="mobile"] .modal-product{grid-template-columns:1fr!important}
+}
