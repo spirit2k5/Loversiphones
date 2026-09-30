@@ -861,3 +861,13 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   background-color:#fafaf7!important;
   image-rendering:auto!important;
 }
+
+
+/* iPhone 8 Plus uploaded-photo sheet - final override */
+.product-photo-sprite{
+  background-image:url("assets/iphone8plus-rebuilt.webp?v=20260930-iphone8-fixed")!important;
+  background-size:400% 300%!important;
+  background-repeat:no-repeat!important;
+  background-color:#fafaf7!important;
+  image-rendering:auto!important;
+}
