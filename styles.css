@@ -871,3 +871,19 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   background-color:#fafaf7!important;
   image-rendering:auto!important;
 }
+
+
+/* Strong iPhone 8 Plus override: beats the generic angle-sheet rules */
+.angle-sprite.product-photo-sprite,
+.angle-sprite.product-photo-sprite.product-pic,
+.angle-sprite.product-photo-sprite.colour-photo,
+.angle-sprite.product-photo-sprite.angle-thumb-photo,
+.angle-sprite.product-photo-sprite.modal-colour-photo,
+.angle-sprite.product-photo-sprite.modal-angle-thumb-photo,
+.angle-sprite.product-photo-sprite.modal-main-photo{
+  background-image:url("assets/iphone8plus-rebuilt.webp?v=20260930-iphone8-fixed2")!important;
+  background-size:400% 300%!important;
+  background-repeat:no-repeat!important;
+  background-color:#fafaf7!important;
+  image-rendering:auto!important;
+}
