@@ -854,8 +854,7 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
 }
 
 
-/* iPhone 8 Plus — clean rebuild from the latest uploaded photos only */
-.iphone8plus-clean-sprite{
+/* Generic uploaded-product photo sheet */\n.product-photo-sprite{
   background-image:url("assets/iphone8plus-rebuilt.webp?v=20260930-clean-rebuild")!important;
   background-size:400% 300%!important;
   background-repeat:no-repeat!important;
