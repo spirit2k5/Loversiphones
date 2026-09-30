@@ -852,3 +852,11 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
 .product-media,.modal-image{
   background:#fafaf7;
 }
+
+/* iPhone 8 Plus — replaced with the customer's latest uploaded photos */
+.iphone8-new-sprite{
+  background-image:url("assets/iphone8plus-new.webp?v=20260930-1915")!important;
+  background-size:400% 300%!important;
+  background-repeat:no-repeat!important;
+  background-color:#fafaf7!important;
+}
