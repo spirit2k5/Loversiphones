@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
-    <loc>https://loversiphones.co.za/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://loversiphones.co.za/assets/catalog.webp</image:loc>
-      <image:title>LoversiPhones iPhone colour range</image:title>
-    </image:image>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://loversiphones.co.za/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://loversiphones.co.za/privacy.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://loversiphones.co.za/terms.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://loversiphones.co.za/returns.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://loversiphones.co.za/warranty.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-8-plus.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-11.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-11-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-11-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-12.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-12-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-12-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-13.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-13-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-13-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-14.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-14-plus.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-14-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-14-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-15.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-15-plus.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-15-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-15-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-16.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-16-plus.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-16-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-16-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-17-air-esim.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-17-pro.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loversiphones.co.za/phones/iphone-17-pro-max.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
