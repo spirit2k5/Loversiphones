@@ -10,6 +10,8 @@ const CONFIG={
 function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");}
 function pos(cfg,i){const c=i%cfg.cols,r=Math.floor(i/cfg.cols);return (c/(cfg.cols-1)*100)+"% "+(r/(cfg.rows-1)*100)+"%";}
 function setSprite(el,src,i,label){const cfg=CONFIG[src];el.style.backgroundImage='url("'+cfg.url+'")';el.style.backgroundSize=(cfg.cols*100)+"% "+(cfg.rows*100)+"%";el.style.backgroundPosition=pos(cfg,i);el.style.backgroundRepeat="no-repeat";if(label)el.setAttribute("aria-label",label);}
+const note=document.querySelector(".known-note");
+if(note) note.textContent="Condition, battery health, accessories, network status, warranty and returns can vary by phone. Confirm the current details for this exact device with LoversiPhones before purchasing.";
 const title=document.querySelector(".phone-detail h1");
 if(!title)return;
 const product=PRODUCTS.find(p=>p.name===title.textContent.trim());
@@ -22,7 +24,7 @@ const orderLink=document.querySelector(".phone-actions .btn.primary");
 let selected=product.variants[0],angleIndex=0;
 const gallery=document.createElement("section");
 gallery.className="detail-angle-gallery";
-gallery.innerHTML='<div class="detail-angle-head"><div><span class="eyebrow">ANGLES</span><h2>See every supplied view</h2></div><b class="detail-angle-label"></b></div><div class="detail-angle-thumbs"></div>';
+gallery.innerHTML='<div class="detail-angle-head"><div><span class="eyebrow">ANGLES</span><h2>See every available view</h2></div><b class="detail-angle-label"></b></div><div class="detail-angle-thumbs"></div>';
 colourWrap.insertAdjacentElement("afterend",gallery);
 const angleWrap=gallery.querySelector(".detail-angle-thumbs"),angleLabel=gallery.querySelector(".detail-angle-label");
 const prev=document.createElement("button"),next=document.createElement("button");
