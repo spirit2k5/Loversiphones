@@ -28,19 +28,68 @@
 @media(max-width:700px){.brand-heart{width:94px!important;height:32px!important}.brand{min-width:96px!important}}
 
 
-/* 2026-10-01 — restore the original LoversiPhones logo selected for this site */
-.hero-logo-image{
-  background-image:url("assets/loversiphones-original-logo.webp?v=20261001-original")!important;
-  background-size:contain!important;
-  background-position:center!important;
-  background-repeat:no-repeat!important;
-  background-color:transparent!important;
-  aspect-ratio:3/2!important;
-}
+
+
+/* 2026-10-01 FINAL: restore the original LoversiPhones logo everywhere */
+.site-header .brand-heart,
 .brand-heart{
-  background-image:url("assets/loversiphones-original-logo.webp?v=20261001-original")!important;
+  width:120px!important;
+  height:80px!important;
+  flex:0 0 120px!important;
+  border-radius:12px!important;
+  background-image:url("assets/loversiphones-original-logo.webp?v=20261001-real-original-2")!important;
   background-size:contain!important;
   background-position:center!important;
   background-repeat:no-repeat!important;
   background-color:transparent!important;
+  box-shadow:none!important;
+  color:transparent!important;
+  font-size:0!important;
+}
+.site-header .brand>span:last-child,
+.brand-heart+span{
+  display:none!important;
+}
+.site-header .brand{
+  min-width:120px!important;
+  gap:0!important;
+}
+body .hero .hero-logo{
+  width:100%!important;
+  max-width:560px!important;
+  margin-inline:auto!important;
+}
+body .hero .hero-logo-image{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:3/2!important;
+  background-image:url("assets/loversiphones-original-logo.webp?v=20261001-real-original-2")!important;
+  background-size:contain!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:26px!important;
+  box-shadow:0 22px 55px rgba(32,56,41,.13)!important;
+}
+@media(max-width:700px){
+  body[data-device="mobile"] .site-header{
+    height:76px!important;
+    padding-inline:12px!important;
+  }
+  body[data-device="mobile"] .site-header .brand-heart,
+  body[data-device="mobile"] .brand-heart{
+    width:108px!important;
+    height:72px!important;
+    flex-basis:108px!important;
+  }
+  body[data-device="mobile"] .hero .hero-logo{
+    width:min(88vw,380px)!important;
+    max-width:380px!important;
+    margin-top:8px!important;
+  }
+  body[data-device="mobile"] .hero .hero-logo-image{
+    aspect-ratio:3/2!important;
+    border-radius:22px!important;
+  }
 }
