@@ -887,3 +887,77 @@ body[data-device="mobile"].motion-ready .catalog.reveal{
   background-color:#fafaf7!important;
   image-rendering:auto!important;
 }
+
+
+/* ===== Logo fix: crisp SVG + correct proportions ===== */
+.site-header .brand{
+  gap:0!important;
+  min-width:0!important;
+}
+.site-header .brand-heart{
+  width:96px!important;
+  height:58px!important;
+  flex:0 0 96px!important;
+  border-radius:10px!important;
+  background-color:transparent!important;
+  background-image:url("assets/loversiphones-logo.svg?v=logo-fix-20261001")!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:contain!important;
+  box-shadow:none!important;
+  color:transparent!important;
+  font-size:0!important;
+  overflow:hidden!important;
+}
+.site-header .brand>span:last-child{
+  display:none!important;
+}
+
+body .hero .hero-logo{
+  width:100%!important;
+  max-width:520px!important;
+  margin-inline:auto!important;
+}
+body .hero .hero-logo-image{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:5/3!important;
+  border-radius:26px!important;
+  background-color:transparent!important;
+  background-image:url("assets/loversiphones-logo.svg?v=logo-fix-20261001")!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:contain!important;
+  box-shadow:0 22px 55px rgba(32,56,41,.13)!important;
+  border:0!important;
+}
+body .hero .logo-halo{
+  inset:8% -3% -6% 8%!important;
+  border-radius:28px!important;
+  opacity:.42!important;
+}
+
+@media(max-width:700px){
+  body[data-device="mobile"] .site-header{
+    height:66px!important;
+    padding-inline:12px!important;
+  }
+  body[data-device="mobile"] .site-header .brand-heart{
+    width:82px!important;
+    height:49px!important;
+    flex-basis:82px!important;
+  }
+  body[data-device="mobile"] .hero .hero-logo{
+    width:min(78vw,300px)!important;
+    max-width:300px!important;
+    margin-top:6px!important;
+  }
+  body[data-device="mobile"] .hero .hero-logo-image{
+    aspect-ratio:5/3!important;
+    border-radius:20px!important;
+  }
+  body[data-device="mobile"] .hero .logo-halo{
+    inset:7% -3% -5% 7%!important;
+    border-radius:22px!important;
+  }
+}
