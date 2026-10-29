@@ -372,3 +372,167 @@ a.model.li-with-icon{
   margin:auto;
 }
 .mobile-dock .dock-wa .li-dock-icon .li-vector{width:19px;height:19px}
+
+
+/* LoversiPhones • compact, colourful animated icons (mobile polish) • 2026-10-29
+   SVG artwork remains vector-sharp at all screen resolutions.
+   Colour is a small accent, not a new button theme. */
+.li-pressable > .li-glyph:not(.li-glyph-wa):not(.li-choice > .li-glyph){
+  box-sizing:border-box;
+  padding:2px;
+  border-radius:7px;
+  color:var(--li-tone,#537346);
+  background:var(--li-tint,rgba(97,121,74,.10));
+}
+[data-li-icon="bag"]{--li-tone:#bc773e;--li-tint:rgba(188,119,62,.14)}
+[data-li-icon="grid"],[data-li-icon="home"],[data-li-icon="smartphone"]{--li-tone:#527e50;--li-tint:rgba(82,126,80,.13)}
+[data-li-icon="phone"]{--li-tone:#197f78;--li-tint:rgba(25,127,120,.13)}
+[data-li-icon="pin"]{--li-tone:#bd6650;--li-tint:rgba(189,102,80,.13)}
+[data-li-icon="message"],[data-li-icon="mail"]{--li-tone:#5075a0;--li-tint:rgba(80,117,160,.12)}
+[data-li-icon="help"],[data-li-icon="info"]{--li-tone:#8068a1;--li-tint:rgba(128,104,161,.12)}
+[data-li-icon="shield"],[data-li-icon="check"]{--li-tone:#448169;--li-tint:rgba(68,129,105,.13)}
+[data-li-icon="rotate"],[data-li-icon="file"]{--li-tone:#798858;--li-tint:rgba(121,136,88,.12)}
+[data-li-icon="left"],[data-li-icon="right"],[data-li-icon="up"],
+[data-li-icon="arrow-right"],[data-li-icon="menu"],[data-li-icon="close"]{
+  --li-tone:#476c4c;--li-tint:rgba(71,108,76,.10);
+}
+/* Keep the selection tick light over its forest-green selected circle. */
+.li-choice > .li-glyph:not(.li-glyph-wa){
+  color:#fff !important;
+  background:#203829 !important;
+}
+/* The WhatsApp vector uses the vivid green logo treatment supplied by the owner. */
+.li-pressable > .li-glyph-wa{background:#25d366;color:#fff}
+.floating-wa.li-icon-only > .li-glyph-wa{background:transparent;color:#fff}
+
+/* Animations: one rare soft WhatsApp pulse, others respond to a tap/hover. */
+@keyframes li-wa-breathe{
+  0%,82%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)}
+  90%{transform:scale(1.055);box-shadow:0 0 0 5px rgba(37,211,102,.13)}
+}
+@keyframes li-phone-ring{
+  0%,100%{transform:rotate(0deg)}
+  23%{transform:rotate(-11deg)}
+  48%{transform:rotate(9deg)}
+  74%{transform:rotate(-5deg)}
+}
+@keyframes li-bag-hop{
+  0%,100%{transform:translateY(0) scale(1)}
+  48%{transform:translateY(-3px) scale(1.06)}
+}
+@keyframes li-pin-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+@keyframes li-arrow-slide{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(3px)}
+}
+.mobile-dock .dock-wa .li-dock-icon{
+  animation:li-wa-breathe 6.5s ease-in-out infinite;
+}
+@media (hover:hover) and (pointer:fine){
+  [data-li-icon="phone"].li-pressable:hover > .li-glyph{animation:li-phone-ring .48s ease-in-out 1}
+  [data-li-icon="bag"].li-pressable:hover > .li-glyph{animation:li-bag-hop .42s ease-out 1}
+  [data-li-icon="pin"].li-pressable:hover > .li-glyph{animation:li-pin-float .65s ease-in-out 1}
+  [data-li-icon="right"].li-pressable:hover > .li-glyph,
+  [data-li-icon="arrow-right"].li-pressable:hover > .li-glyph{animation:li-arrow-slide .4s ease-in-out 1}
+}
+/* A tap gives a brief, visible response on phones without a persistent loop. */
+[data-li-icon="bag"].li-pressable:active > .li-glyph{animation:li-bag-hop .38s ease-out 1}
+[data-li-icon="phone"].li-pressable:active > .li-glyph{animation:li-phone-ring .4s ease-in-out 1}
+[data-li-icon="pin"].li-pressable:active > .li-glyph{animation:li-pin-float .4s ease-out 1}
+
+/* Compact mobile icons; preserve 44px touch targets rather than shrinking buttons. */
+@media (max-width:900px){
+  body .li-with-icon:not(.model){gap:6px}
+  body .btn.li-with-icon{gap:5px;max-width:100%}
+  body .btn.li-with-icon > .li-glyph{
+    width:15px;height:15px;min-width:15px;font-size:14px;padding:1px;
+  }
+  body .btn.li-with-icon > .li-glyph-wa{
+    width:15px;height:15px;min-width:15px;padding:2px;
+  }
+  body .product-actions{min-width:0}
+  body .product-actions .btn{box-sizing:border-box;max-width:100%}
+  body .product-actions .btn[data-li-icon="bag"]{
+    min-width:0;gap:4px;padding-inline:7px;
+  }
+  body .product-actions .btn[data-li-icon="bag"] > .li-glyph{
+    width:14px;height:14px;min-width:14px;font-size:13px;
+  }
+  /* The 44px Call control is icon-only visually; the anchor keeps its text and purpose. */
+  body .product-actions a.btn[data-li-icon="phone"]{
+    box-sizing:border-box;
+    flex:0 0 44px !important;
+    width:44px;min-width:44px;max-width:44px;
+    min-height:44px;
+    padding:0 !important;
+    gap:0;
+    font-size:0 !important;
+  }
+  body .product-actions a.btn[data-li-icon="phone"] > .li-glyph{
+    width:18px;height:18px;min-width:18px;font-size:18px;padding:2px;
+  }
+  body .site-header .nav a.li-with-icon{justify-content:flex-start;gap:8px}
+  body .site-header .nav a .li-glyph{width:16px;height:16px;min-width:16px;font-size:15px}
+  body .menu-btn.li-icon-only > .li-glyph,
+  body .back-top.li-icon-only > .li-glyph{
+    width:18px;height:18px;min-width:18px;font-size:18px;
+  }
+  body .card-arrow.li-icon-only > .li-glyph,
+  body .detail-nav.li-icon-only > .li-glyph,
+  body .modal-angle-arrow.li-icon-only > .li-glyph,
+  body .modal-close.li-icon-only > .li-glyph{
+    width:17px;height:17px;min-width:17px;font-size:17px;
+  }
+  body .phone-actions .btn.li-with-icon{gap:6px}
+  body .faq-item summary.li-with-icon .li-glyph{width:15px;height:15px;min-width:15px;font-size:15px}
+  body .li-choice > .li-glyph{
+    top:3px;right:3px;width:14px;height:14px;min-width:14px;padding:2px;
+  }
+  body .mobile-dock a{min-width:0;overflow:hidden}
+  body #mobileDock a .li-dock-icon{
+    box-sizing:border-box;
+    width:22px;height:22px;min-width:22px;min-height:22px;
+    flex:none;
+    font-size:0 !important;
+    line-height:1;
+  }
+  body #mobileDock a .li-dock-icon .li-vector{
+    width:17px;height:17px;max-width:17px;max-height:17px;
+  }
+  body #mobileDock a small{
+    max-width:100%;font-size:10px;white-space:nowrap;line-height:1.15;
+  }
+  body #mobileDock a.dock-wa .li-dock-icon{
+    width:23px;height:23px;min-width:23px;min-height:23px;
+    border-radius:50%;
+    background:#25d366;
+  }
+  body #mobileDock a.dock-wa .li-dock-icon .li-vector{
+    width:16px;height:16px;max-width:16px;max-height:16px;
+  }
+  body .footer-inner a.li-with-icon,
+  body .contact-links a.li-with-icon{
+    max-width:100%;overflow-wrap:anywhere;gap:5px;
+  }
+  body .footer-inner a .li-glyph,
+  body .contact-links a .li-glyph{
+    width:14px;height:14px;min-width:14px;font-size:14px;padding:1px;
+  }
+}
+@media (max-width:359px){
+  body .product-actions .btn[data-li-icon="bag"]{gap:3px;padding-inline:5px}
+  body .product-actions .btn[data-li-icon="bag"] > .li-glyph{width:12px;height:12px;min-width:12px}
+  body #mobileDock a .li-dock-icon .li-vector{width:16px;height:16px}
+  body #mobileDock a small{font-size:9px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mobile-dock .dock-wa .li-dock-icon,
+  .li-pressable:hover > .li-glyph,
+  .li-pressable:active > .li-glyph{
+    animation:none !important;
+    transform:none !important;
+  }
+}
