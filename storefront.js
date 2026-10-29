@@ -220,3 +220,72 @@
     childList:true,subtree:true,attributes:true,attributeFilter:['aria-expanded']
   });
 })();
+
+
+/* Site-wide SEO: crawlable navigation enhancement & BreadcrumbList for 25 products. */
+(() => {
+  "use strict";
+  const path=window.location.pathname;
+  const base="https://loversiphones.co.za/";
+  const modelSlugs=[
+    "iphone-8-plus","iphone-11","iphone-11-pro","iphone-11-pro-max",
+    "iphone-12","iphone-12-pro","iphone-12-pro-max",
+    "iphone-13","iphone-13-pro","iphone-13-pro-max",
+    "iphone-14","iphone-14-plus","iphone-14-pro","iphone-14-pro-max",
+    "iphone-15","iphone-15-plus","iphone-15-pro","iphone-15-pro-max",
+    "iphone-16","iphone-16-plus","iphone-16-pro","iphone-16-pro-max",
+    "iphone-17-air-esim","iphone-17-pro","iphone-17-pro-max"
+  ];
+  function breadcrumb(names,urls){
+    const data={"@context":"https://schema.org","@type":"BreadcrumbList",
+      itemListElement:names.map((name,i)=>({"@type":"ListItem",position:i+1,name,item:urls[i]}))};
+    if(document.querySelector('script[data-li-seo-breadcrumb]'))return;
+    const node=document.createElement("script");
+    node.type="application/ld+json";
+    node.dataset.liSeoBreadcrumb="1";
+    node.textContent=JSON.stringify(data);
+    document.head.append(node);
+  }
+  if(path==="/browse-phones.html"){
+    breadcrumb(["LoversiPhones","Browse iPhones"],[base,base+"browse-phones.html"]);
+    return;
+  }
+  const m=path.match(/^\/phones\/(iphone-[a-z0-9-]+)\.html$/);
+  if(!m)return;
+  const index=modelSlugs.indexOf(m[1]);
+  if(index===-1)return;
+  const title=document.querySelector(".phone-detail h1");
+  if(!title)return;
+  const name=title.textContent.trim();
+  breadcrumb(["LoversiPhones","Browse iPhones",name],[base,base+"browse-phones.html",base+path.slice(1)]);
+  const breadcrumbBar=document.querySelector(".phone-breadcrumb");
+  const catalogueLink=breadcrumbBar?.querySelector('a[href="/#phones"]');
+  if(catalogueLink){catalogueLink.href="/browse-phones.html";catalogueLink.textContent="Browse iPhones";}
+  if(document.querySelector("[data-li-seo-related]"))return;
+  const info=document.querySelector(".phone-detail");
+  const footer=info?.querySelector(".site-mini-footer");
+  if(!info||!footer)return;
+  const section=document.createElement("section");
+  section.className="li-related-models";
+  section.dataset.liSeoRelated="1";
+  section.setAttribute("aria-label","Compare iPhone models");
+  const heading=document.createElement("h2");
+  heading.textContent="Explore more iPhone models";
+  const para=document.createElement("p");
+  para.textContent="Compare iPhone models at LoversiPhones in Soweto.";
+  const links=document.createElement("div");
+  links.className="li-related-links";
+  const others=[index-1,index+1].filter(n=>n>=0&&n<modelSlugs.length);
+  for(const n of others){
+    const a=document.createElement("a");
+    a.href="/phones/"+modelSlugs[n]+".html";
+    a.textContent="View "+modelSlugs[n].replace(/^iphone-/,"iPhone ").replace(/-esim$/," eSIM").replace(/-/g," ");
+    links.append(a);
+  }
+  const all=document.createElement("a");
+  all.href="/browse-phones.html";
+  all.textContent="Compare all iPhone models";
+  links.append(all);
+  section.append(heading,para,links);
+  info.insertBefore(section,footer);
+})();
