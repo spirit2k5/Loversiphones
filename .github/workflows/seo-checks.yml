@@ -1,0 +1,19 @@
+name: LoversiPhones SEO and storefront checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  static-seo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate pages, catalogue, sitemap and structured data
+        run: node --test tests/*.test.cjs
