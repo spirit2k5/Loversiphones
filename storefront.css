@@ -536,3 +536,42 @@ a.model.li-with-icon{
     transform:none !important;
   }
 }
+
+
+/* SEO-related comparison links: intentionally simple, fast and mobile-friendly. */
+.li-related-models{
+  margin:24px 0 10px;
+  padding:20px;
+  background:#eef3e9;
+  border:1px solid #d8e0d4;
+  border-radius:18px;
+  color:#203829;
+}
+.li-related-models h2{font-size:clamp(17px,1.5vw,22px);margin:0 0 6px}
+.li-related-models p{font-size:13px;line-height:1.5;margin:0 0 12px;color:#526354}
+.li-related-links{display:flex;flex-wrap:wrap;gap:8px}
+.li-related-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 12px;
+  min-height:44px;
+  max-width:100%;
+  border:1px solid #c7d6c1;
+  border-radius:999px;
+  background:#fffdf8;
+  color:#203829;
+  font-size:13px;
+  font-weight:750;
+  text-align:center;
+  overflow-wrap:anywhere;
+  transition:background-color .2s ease,border-color .2s ease;
+}
+.li-related-links a:hover{background:#dce7d3;border-color:#789464}
+.li-related-links a:focus-visible{outline:3px solid #456c36;outline-offset:2px}
+@media(max-width:600px){
+  .li-related-models{margin:18px 0 10px;padding:13px;border-radius:14px}
+  .li-related-links{gap:6px}
+  .li-related-links a{flex:1 1 100%;min-height:42px;font-size:12px;padding:8px}
+}
+@media(prefers-reduced-motion:reduce){.li-related-links a{transition:none}}
