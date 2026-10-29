@@ -348,3 +348,9 @@ a.model.li-with-icon{
   .li-pressable:hover > .li-glyph,
   .li-pressable:active > .li-glyph{transform:none}
 }
+
+
+/* The compact menu remains mobile-only; SVG decoration must not expose it on desktop. */
+@media (min-width:901px){
+  body .menu-btn.li-icon-only{display:none !important}
+}
