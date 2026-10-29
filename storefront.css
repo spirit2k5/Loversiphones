@@ -354,3 +354,21 @@ a.model.li-with-icon{
 @media (min-width:901px){
   body .menu-btn.li-icon-only{display:none !important}
 }
+
+
+/* Match the supplied green WhatsApp emblem on floating and dock controls. */
+.floating-wa.li-icon-only{
+  background:#25d366;
+  border-radius:50%;
+  box-shadow:0 12px 30px rgba(8,127,55,.24);
+}
+.mobile-dock .dock-wa .li-dock-icon{
+  background:#25d366;
+  width:27px;
+  height:27px;
+  min-width:27px;
+  min-height:27px;
+  border-radius:50%;
+  margin:auto;
+}
+.mobile-dock .dock-wa .li-dock-icon .li-vector{width:19px;height:19px}
