@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Temporary maintenance and security review. Restore indexing rules when reopening.
+Sitemap: https://loversiphones.co.za/sitemap.xml

@@ -22,7 +22,7 @@ const previewSource=product.name==="iPhone 8 Plus"?"uploaded":"catalog";
 const main=document.querySelector(".phone-page-image");
 const colourWrap=document.querySelector(".colour-shots");
 const orderLink=document.querySelector(".phone-actions .btn.primary");
-let selected=product.variants[0],angleIndex=0;
+let selected=product.variants[0],angleIndex=0,angleChosen=false;
 const gallery=document.createElement("section");
 gallery.className="detail-angle-gallery";
 gallery.innerHTML='<div class="detail-angle-head"><div><span class="eyebrow">ANGLES</span><h2>See every available view</h2></div><b class="detail-angle-label"></b></div><div class="detail-angle-thumbs"></div>';
@@ -39,10 +39,11 @@ function drawMain(){
  const list=angleList();
  if(!list.length)return;
  angleIndex=(angleIndex+list.length)%list.length;
- setSprite(main,source,list[angleIndex],product.name+" in "+selected.name+" angle "+(angleIndex+1));
- count.textContent=(angleIndex+1)+" / "+list.length+" views";
+ if(angleChosen) setSprite(main,source,list[angleIndex],product.name+" in "+selected.name+" angle "+(angleIndex+1));
+ else setSprite(main,previewSource,previewIndex(selected),product.name+" in "+selected.name);
+ count.textContent=angleChosen?(angleIndex+1)+" / "+list.length+" views":list.length+" angles";
  angleLabel.textContent=selected.name;
- [...angleWrap.children].forEach((b,i)=>b.setAttribute("aria-pressed",String(i===angleIndex)));
+ [...angleWrap.children].forEach((b,i)=>b.setAttribute("aria-pressed",String(angleChosen&&i===angleIndex)));
 }
 function drawAngles(){
  angleWrap.innerHTML="";
@@ -50,7 +51,7 @@ function drawAngles(){
  list.forEach((idx,i)=>{
   const b=document.createElement("button");b.type="button";b.className="detail-angle-thumb";b.setAttribute("aria-label","View angle "+(i+1));b.setAttribute("aria-pressed",String(i===angleIndex));
   const pic=document.createElement("span");pic.className="detail-angle-pic";setSprite(pic,source,idx,selected.name+" angle "+(i+1));
-  const sm=document.createElement("small");sm.textContent="View "+(i+1);b.append(pic,sm);b.addEventListener("click",()=>{angleIndex=i;drawMain();});angleWrap.append(b);
+  const sm=document.createElement("small");sm.textContent="View "+(i+1);b.append(pic,sm);b.addEventListener("click",()=>{angleIndex=i;angleChosen=true;drawMain();});angleWrap.append(b);
  });
  drawMain();
 }
@@ -60,12 +61,12 @@ function drawColours(){
  product.variants.forEach(v=>{
   const b=document.createElement("button");b.type="button";b.className="colour-shot colour-shot-button";b.dataset.colour=v.name;b.setAttribute("aria-pressed",String(v.name===selected.name));b.setAttribute("aria-label","Choose "+v.name);
   const pic=document.createElement("span");pic.className="colour-shot-img";setSprite(pic,previewSource,previewIndex(v),product.name+" in "+v.name);
-  const label=document.createElement("b");label.textContent=v.name;b.append(pic,label);b.addEventListener("click",()=>{selected=v;angleIndex=0;drawColours();drawAngles();updateOrder();});colourWrap.append(b);
+  const label=document.createElement("b");label.textContent=v.name;b.append(pic,label);b.addEventListener("click",()=>{selected=v;angleIndex=0;angleChosen=false;drawColours();drawAngles();updateOrder();[...colourWrap.querySelectorAll("button")].find(button=>button.dataset.colour===v.name)?.focus({preventScroll:true});});colourWrap.append(b);
  });
 }
-prev.addEventListener("click",()=>{angleIndex--;drawMain();});next.addEventListener("click",()=>{angleIndex++;drawMain();});
+prev.addEventListener("click",()=>{angleIndex=angleChosen?angleIndex-1:angleList().length-1;angleChosen=true;drawMain();});next.addEventListener("click",()=>{angleIndex=angleChosen?angleIndex+1:0;angleChosen=true;drawMain();});
 let startX=0,startY=0;
 main.parentElement.addEventListener("pointerdown",e=>{startX=e.clientX;startY=e.clientY;});
-main.parentElement.addEventListener("pointerup",e=>{const dx=e.clientX-startX,dy=e.clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){angleIndex+=dx<0?1:-1;drawMain();}});
+main.parentElement.addEventListener("pointerup",e=>{const dx=e.clientX-startX,dy=e.clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){angleIndex=angleChosen?angleIndex+(dx<0?1:-1):(dx<0?0:angleList().length-1);angleChosen=true;drawMain();}});
 drawColours();drawAngles();updateOrder();
 })();
