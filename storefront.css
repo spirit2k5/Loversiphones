@@ -169,3 +169,182 @@ input, select, textarea { max-width: 100%; font: inherit; }
   .reveal, .motion-ready .reveal { opacity: 1 !important; transform: none !important; }
   .product-card, .hero-logo { transform: none !important; }
 }
+
+
+/* LoversiPhones 4K vector-icon system • 29 October 2026
+   Crisp on retina / UHD; gentle touch, mouse and keyboard feedback. */
+:root{
+  --li-forest:#203829;
+  --li-olive:#61794a;
+  --li-icon-halo:rgba(111,130,75,.14);
+  --li-wa:#25d366;
+}
+.li-pressable{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.li-with-icon:not(.model){
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.48em;
+  vertical-align:middle;
+}
+.li-glyph{
+  width:1.18em;
+  height:1.18em;
+  min-width:1.18em;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  color:inherit;
+  transform:translate3d(0,0,0);
+  transition:transform .28s cubic-bezier(.2,.75,.22,1.45),filter .2s ease,background-color .2s ease;
+  pointer-events:none;
+}
+.li-vector{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  flex:none;
+}
+.li-glyph-wa{
+  box-sizing:content-box;
+  padding:4px;
+  border-radius:50%;
+  background:var(--li-wa);
+  color:#fff;
+  box-shadow:0 2px 8px rgba(18,132,61,.18);
+}
+.li-icon-only{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  font-size:0 !important;
+}
+.li-icon-only > .li-glyph{
+  font-size:21px;
+  margin:0;
+  width:22px;
+  height:22px;
+  min-width:22px;
+}
+.menu-btn.li-icon-only > .li-glyph,
+.back-top.li-icon-only > .li-glyph{
+  width:24px;
+  height:24px;
+  min-width:24px;
+}
+.floating-wa.li-icon-only > .li-glyph{
+  font-size:35px;
+  width:35px;
+  height:35px;
+  min-width:35px;
+  padding:0;
+  color:#fff;
+  background:transparent;
+  box-shadow:none;
+}
+.nav a.li-with-icon,
+.site-mini-footer a.li-with-icon,
+.footer-inner a.li-with-icon{
+  gap:.4em;
+}
+.nav a .li-glyph{font-size:14px}
+.btn.li-with-icon,
+.nav-cta.li-with-icon{gap:10px}
+.btn .li-glyph{font-size:18px}
+.product-actions .btn .li-glyph{font-size:17px}
+a.model.li-with-icon{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.model .li-glyph{font-size:18px;color:var(--li-olive);margin-left:auto}
+.model > b[hidden]{display:none !important}
+.faq-item summary.li-with-icon{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  list-style:none;
+}
+.faq-item summary.li-with-icon .li-glyph{color:var(--li-olive);font-size:19px}
+.faq-item summary.li-with-icon::-webkit-details-marker{display:none}
+.mobile-dock a .li-dock-icon{
+  display:flex !important;
+  height:27px;
+  min-height:27px;
+  align-items:center;
+  justify-content:center;
+  color:inherit;
+  font-size:0 !important;
+}
+.mobile-dock a .li-dock-icon .li-vector{
+  width:24px;
+  height:24px;
+  transition:transform .24s cubic-bezier(.2,.75,.22,1.45);
+}
+.mobile-dock a.dock-wa .li-dock-icon{
+  color:#fff;
+}
+.li-choice{
+  position:relative;
+  transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.li-choice > .li-glyph{
+  position:absolute;
+  z-index:3;
+  top:5px;
+  right:5px;
+  width:18px;
+  min-width:18px;
+  height:18px;
+  border-radius:50%;
+  padding:3px;
+  background:var(--li-forest);
+  color:#fff;
+  box-shadow:0 2px 8px rgba(32,56,41,.22);
+  opacity:0;
+  transform:scale(.55);
+  pointer-events:none;
+}
+.li-choice[aria-pressed="true"] > .li-glyph{
+  opacity:1;
+  transform:scale(1);
+}
+.li-choice[aria-pressed="true"]{
+  border-color:var(--li-olive) !important;
+  box-shadow:0 0 0 2px var(--li-icon-halo);
+}
+.li-pressable:focus-visible{
+  outline:3px solid #5b7b48;
+  outline-offset:3px;
+}
+.li-pressable:active > .li-glyph{
+  transform:scale(.83) rotate(-6deg);
+  filter:brightness(1.15);
+}
+.li-pressable:active > .li-dock-icon .li-vector{transform:scale(.82)}
+.li-choice:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){
+  .li-pressable:hover > .li-glyph{transform:translateY(-2px) scale(1.1)}
+  .li-with-icon:hover > .li-glyph-wa{filter:brightness(1.08);box-shadow:0 4px 13px rgba(18,132,61,.28)}
+  .li-pressable:hover > .li-dock-icon .li-vector{transform:translateY(-2px) scale(1.1)}
+  .li-choice:hover{box-shadow:0 0 0 3px var(--li-icon-halo)}
+}
+@media (max-width:600px){
+  .btn .li-glyph{font-size:16px}
+  .nav a .li-glyph{font-size:16px}
+  .li-glyph-wa{padding:3px}
+  .mobile-dock a .li-dock-icon .li-vector{width:23px;height:23px}
+}
+@media (prefers-reduced-motion:reduce){
+  .li-pressable,.li-glyph,.li-vector,.li-choice{transition:none !important;animation:none !important}
+  .li-pressable:hover > .li-glyph,
+  .li-pressable:active > .li-glyph{transform:none}
+}
