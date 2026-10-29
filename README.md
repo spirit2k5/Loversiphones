@@ -4,7 +4,7 @@ Static storefront at https://loversiphones.co.za/, published from the root of `m
 
 The storefront, 25 model pages, model directory and information pages were restored on 29 October 2026 from the last published storefront before the maintenance replacement (`246a9e4`). The original product prices, storage, colour mappings and image files are retained.
 
-`storefront.css` supplies responsive layouts from small phones to 3840px screens. The original image tiles are 384px for catalogue views and 200px for most angle views; a larger screen layout does not create extra photographic detail. Replace images only with approved, correctly matched originals.
+`storefront.css` supplies responsive layouts from small phones to 3840px screens. Mobile mode activates automatically at widths of 900px or less, including mouse-controlled narrow windows. Phone layouts use compact two-column cards from 360px to 600px, with one compact column below 360px and 44px order targets. The original image tiles are 384px for catalogue views and 200px for most angle views; a larger screen layout does not create extra photographic detail. Replace images only with approved, correctly matched originals.
 
 `script.js` handles catalogue browsing and orders. `product-page.js` handles individual phone galleries. `enhancements.js` provides the order review step. `storefront.js` manages keyboard navigation, dialog focus and form validation. Orders open a prepared message in WhatsApp; a customer must send that message to contact the store. There is no website payment or order database.
 

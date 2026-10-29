@@ -58,14 +58,14 @@ function detectDeviceMode(){
   const ua=navigator.userAgent||'';
   const phoneUA=/iPhone|iPod|Android.*Mobile|Windows Phone|Mobile/i.test(ua);
   const coarse=window.matchMedia&&window.matchMedia('(pointer: coarse)').matches;
-  const narrow=Math.min(window.innerWidth,(window.screen&&window.screen.width)||window.innerWidth)<=900;
-  const mobile=phoneUA||(coarse&&narrow);
+  const narrow=window.innerWidth<=900;
+  const mobile=phoneUA||narrow;
   const mode=mobile?'mobile':'desktop';
   body.dataset.device=mode;
   body.dataset.input=coarse?'touch':'mouse';
   if(deviceLabel){
     deviceLabel.textContent=mobile?'Mobile experience':'Desktop experience';
-    deviceHint.textContent=mobile?'Swipe phone angles · tap a colour photo':'Hover, pick colours and browse every angle';
+    deviceHint.textContent=mobile&&coarse?'Swipe phone angles · tap a colour photo':'Pick a colour · use arrows to browse angles';
   }
   if(deviceIcon) deviceIcon.textContent=mobile?'▯':'▰';
   if(deviceChip) deviceChip.setAttribute('data-mode',mode);

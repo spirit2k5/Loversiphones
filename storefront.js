@@ -1,6 +1,14 @@
 /* Keyboard support, form validation and an explicit WhatsApp handoff. */
 (() => {
   'use strict';
+  const mobileViewport = matchMedia('(max-width: 900px)');
+  const syncDisplayMode = () => {
+    const phone = /iPhone|iPod|Android.*Mobile|Windows Phone|Mobile/i.test(navigator.userAgent || '');
+    document.body.dataset.device = phone || mobileViewport.matches ? 'mobile' : 'desktop';
+    document.body.dataset.input = matchMedia('(pointer: coarse)').matches ? 'touch' : 'mouse';
+  };
+  syncDisplayMode();
+  mobileViewport.addEventListener('change', syncDisplayMode);
   const menu = document.getElementById('menuBtn');
   const nav = document.getElementById('nav');
   if (menu && nav) {
